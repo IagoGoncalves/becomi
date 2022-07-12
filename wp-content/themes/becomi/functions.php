@@ -29,15 +29,15 @@ require_once get_template_directory() . '/core/classes/class-shortcodes.php';
 require_once get_template_directory() . '/core/classes/class-thumbnail-resizer.php';
 // require_once get_template_directory() . '/core/classes/class-theme-options.php';
 // require_once get_template_directory() . '/core/classes/class-options-helper.php';
-// require_once get_template_directory() . '/core/classes/class-post-type.php';
+require_once get_template_directory() . '/core/classes/class-post-type.php';
 // require_once get_template_directory() . '/core/classes/class-taxonomy.php';
-// require_once get_template_directory() . '/core/classes/class-metabox.php';
+require_once get_template_directory() . '/core/classes/class-metabox.php';
 // require_once get_template_directory() . '/core/classes/abstracts/abstract-front-end-form.php';
 // require_once get_template_directory() . '/core/classes/class-contact-form.php';
 // require_once get_template_directory() . '/core/classes/class-post-form.php';
 // require_once get_template_directory() . '/core/classes/class-user-meta.php';
 // require_once get_template_directory() . '/core/classes/class-post-status.php';
-//require_once get_template_directory() . '/core/classes/class-term-meta.php';
+require_once get_template_directory() . '/core/classes/class-term-meta.php';
 
 /**
  * Odin Widgets.
@@ -222,6 +222,8 @@ function odin_enqueue_scripts() {
 	// Loads Odin main stylesheet.
 	wp_enqueue_style( 'odin-style', get_stylesheet_uri(), array(), null, 'all' );
 
+	wp_enqueue_style( 'swiper', $template_url . '/assets/css/swiper.min.css', array(), null, 'all' );
+
 	// jQuery.
 	wp_enqueue_script( 'jquery' );
 
@@ -243,6 +245,15 @@ function odin_enqueue_scripts() {
 		// Grunt main file with Bootstrap, FitVids and others libs.
 		wp_enqueue_script( 'odin-main-min', $template_url . '/assets/js/main.min.js', array(), null, true );
 	}
+
+	wp_enqueue_script( 'enviar-email', $template_url . '/assets/js/enviar-email.js', array('jquery'), null, true );
+	wp_localize_script( 'enviar-email', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+
+	wp_enqueue_script( 'main-js', $template_url . '/assets/js/main-js.js', array('jquery'), null, true );
+		
+	wp_enqueue_script( 'swiper', $template_url . '/assets/js/swiper.jquery.min.js', array('jquery'), null, true );
+
+	wp_localize_script( 'galeria', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 
 	// Grunt watch livereload in the browser.
 	// wp_enqueue_script( 'odin-livereload', 'http://localhost:35729/livereload.js?snipver=1', array(), null, true );
@@ -317,4 +328,80 @@ if ( is_woocommerce_activated() ) {
 	require get_template_directory() . '/inc/woocommerce/hooks.php';
 	require get_template_directory() . '/inc/woocommerce/functions.php';
 	require get_template_directory() . '/inc/woocommerce/template-tags.php';
+}
+//Custon Post end Taxonomy
+require_once get_template_directory() . '/inc/custom-posts.php';
+
+//Metabox
+require_once get_template_directory() . '/inc/custom-fields.php';
+
+//Ajax
+/*require_once('class.phpmailer.php');
+require_once get_template_directory() . '/inc/ajax.php';*/
+
+//MetaBox
+$post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;
+$template_file = get_post_meta($post_id,'_wp_page_template',TRUE);
+
+//logo do login do adiministrador do Wordpress
+function cutom_login_logo() {
+	echo "<style type=\"text/css\">
+		body.login div#login h1 a {
+			background-image: url(". get_template_directory_uri() ."/assets/images/adm.png) !important;
+			background-size: cover !important;
+			height: 180px !important;
+			width: 180px !important;
+			display: block;
+		}
+	</style>";
+}
+add_action( 'login_enqueue_scripts', 'cutom_login_logo' );
+
+// Remove Labels from Admin Menu
+function remove_menus () {
+
+	global $menu;
+
+	$restricted = array(__('Posts'), __('Post'), __('Links'), __('Comments'));
+
+	end ($menu);
+
+	while (prev($menu)){
+	$value = explode(' ',$menu[key($menu)][0]);
+		if(in_array($value[0] != NULL?$value[0]:"" , $restricted)){unset($menu[key($menu)]);}
+		}
+	}
+
+add_action('admin_menu', 'remove_menus');
+
+function excerpt($limit) {
+      $excerpt = explode(' ', get_the_excerpt(), $limit);
+
+      if (count($excerpt) >= $limit) {
+          array_pop($excerpt);
+          $excerpt = implode(" ", $excerpt) . '...';
+      } else {
+          $excerpt = implode(" ", $excerpt);
+      }
+
+      $excerpt = preg_replace('`\[[^\]]*\]`', '', $excerpt);
+
+      return $excerpt;
+}
+
+function content($limit) {
+    $content = explode(' ', get_the_content(), $limit);
+
+    if (count($content) >= $limit) {
+        array_pop($content);
+        $content = implode(" ", $content) . '...';
+    } else {
+        $content = implode(" ", $content);
+    }
+
+    $content = preg_replace('/\[.+\]/','', $content);
+    $content = apply_filters('the_content', $content); 
+    $content = str_replace(']]>', ']]&gt;', $content);
+
+    return $content;
 }
