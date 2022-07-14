@@ -41,6 +41,11 @@ h1, h2, h3, h4, h5, p, a, b, title, span, input, button{
                 width: 1280px;
         }
 }
+.alinhamento{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+}
 header{
         @extend .col-md-12;
         min-height: 0px;
@@ -49,6 +54,7 @@ header{
         background-color: #FFFFFF;
         z-index: 999;
         top: 0;
+        box-shadow: -16px 5px 34px -25px #000;
         .container:before, .container:after {
             content: " ";
             display: none;
@@ -151,7 +157,6 @@ header{
                                         &:focus {
                                             outline: 0px auto -webkit-focus-ring-color; 
                                             outline-offset: 0px; 
-                                            color: #fff;
                                             background-color: transparent;
                                         }                                               
                                 }
@@ -187,14 +192,39 @@ header{
                                         }       
                                 }
                         }
-                }                               
+                }  
+                .icones{
+                        a{
+                                text-decoration: none;
+                                svg{
+                                        transition: all .4s;
+                                        &:hover{
+                                                transition: all .4s;
+                                                transform: scale(0.9);
+                                                path{
+                                                        fill: $detalhes;
+                                                }
+                                        }
+                                }
+                        }
+                        .whatsapp{
+                                margin-right: 10px;
+                        }
+                }
         }
         @media only screen and (max-width: 990px){
                 width: 100%;
                 .main-navigation{
+                        .icones{
+                                display: none;
+                        }
+                }
+        }
+        @media only screen and (max-width: 770px){
+                .main-navigation{
                         .navbar-nav{
                                 li{
-                                        padding: 0 10px;
+                                        padding: 0 7px;
                                         a{
                                                 font-size: 15px;
                                         }
@@ -342,7 +372,81 @@ footer{
         }
 }
 main{
-        margin-top: 125px;
+        margin-top: 119px;
+}
+h2{
+        font-size: 48px;
+        font-weight: 600;
+        color: $titulo;
+}
+p{
+        font-size: 18px;    
+        color: $texto;   
+        font-weight: 300;
+}
+.breadcrumb{
+        background-color:transparent;
+        padding: 0px;
+        margin-bottom: 0px;
+        ul{
+                display: flex;
+                list-style: none;
+                justify-content: center;
+                align-items: baseline;
+                padding: 0;
+                li{
+                        padding-right: 5px;
+                        a{
+                                font-weight: 300;
+                                font-size: 16px;
+                                color: #fff;
+                                transition: all .3s;
+                        }
+                }
+                .atual{
+                        h1{
+                                font-weight: 300;
+                                font-size: 16px;
+                                color: #fff;
+                        }
+                }
+        }
+        @media screen and (max-width: 770px) and (min-width: 220px) {
+                .container{
+                        padding-top: 45px;
+                }
+        }
+        @media screen and (max-width: 550px) and (min-width: 220px) {
+                padding:0px;
+                margin-bottom: 0px;
+                margin-top: 0px;
+                .container{
+                        ul{
+                                padding: 25px 0 0 0;
+                        }
+                }
+        }
+}
+.botao-padrao{
+        color: #fff;
+        background-color: #000;
+        padding: 5px 10px;
+        border-radius: 5px;
+        transition: all .3s;
+        &:hover{
+                color: #fff;
+                text-decoration: none;
+                background-color: $detalhes;
+                transition: all .3s;
+        }
+}
+.titulo-diferenciado{
+        flex-direction: column;
+        margin-bottom: 60px;
+        h2{
+                margin: 0 0 10px 0;
+                text-align: center;
+        }
 }
 .home{
         .banner{
@@ -384,7 +488,7 @@ main{
                                 position: absolute;
                                 z-index: 999;
                                 top: 50%;
-                                left: 15%;
+                                left: 18%;
                                 transform: translateY(-50%); 
                                 @media screen and (max-width: 920px){
                                        left: 60px;
@@ -412,8 +516,10 @@ main{
                                 h3{
                                         font-size: 36px;  
                                         font-weight: 300;
-                                        color: #fff;
                                         //width: 800px;
+                                        p{
+                                                color: #fff;
+                                        }
                                         @media screen and (max-width: 920px){
                                                width: 600px;
                                                font-size: 36px;
@@ -499,4 +605,229 @@ main{
                         }                        
                 }
         } 
+        .negocio{
+                @extend .col-md-12;
+                padding: 100px 0;
+                background-image: url(../images/fundo-pedra.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                .container{
+                        display: flex;
+                        align-items: baseline;
+                        h2{
+                                @extend .col-md-4;
+                                width: 34.333333%;
+                                position: relative;
+                                padding-left: 0;
+                                &:after{
+                                        content: "";
+                                        background-color: $detalhes;
+                                        width: 142px;
+                                        height: 4px;
+                                        position: absolute;
+                                        bottom: -30px;
+                                        left: 0;
+                                }
+                        }
+                        article{
+                                @extend .col-md-7;
+                                margin-left: 6%;
+                                aside{
+                                        margin-bottom: 60px;
+                                        img{
+                                                margin-right: 30px;
+                                        }
+                                }
+                        }
+                }
+        }
+        .produtos{
+                @extend .col-md-12;
+                padding: 80px 0;
+                .container{
+                        .conteudo{
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: flex-start;
+                                .box{
+                                        @extend .col-md-3;
+                                        width: 22%;
+                                        flex-direction: column;
+                                        height: 400px;
+                                        img{
+                                                width: 80%;
+                                        }
+                                        h3{
+                                                font-size: 25px;
+                                                color: $titulo;
+                                                font-weight: 500;
+                                                text-align: center;
+                                                margin: 20px 0px 10px 0;
+                                        }
+                                        p{
+                                                text-align: center;
+                                        }
+                                        @media screen and (max-width: 992px){
+                                                width: 45%;
+                                        }  
+                                        @media screen and (max-width: 425px){
+                                                width: 100%;
+                                        }
+                                }
+                        }
+                }
+        }
+        .servicos{
+                @extend .col-md-12;
+                background-color: $background;
+                padding: 100px 0;
+                .container{
+                        flex-direction: column;
+                        h2{
+                                margin: 0 0 50px 0;
+                                width: 60%;
+                                text-align: center;
+                        }
+                        aside{
+                                .conteudo{
+                                        background-color: #000;
+                                        padding: 80px 60px;
+                                        p{
+                                                color: #fff;
+                                                margin-bottom: 60px;
+                                        }
+                                        a{
+                                                color: #000;
+                                                background-color: #fff;
+                                                &:hover{
+                                                        color: #fff;
+                                                        background-color: $detalhes;
+                                                        text-decoration: none;
+                                                }
+                                        }
+                                }
+                        }
+                }
+        }
+}
+.sobre{
+        .fundo{
+                @extend .col-md-12;
+                background-image: url(../images/quem-somos.jpg);
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                background-position: top;
+                padding: 80px 0 200px 0;
+                h1{
+                        text-align: center;
+                        font-size: 64px;
+                        font-weight: 600;
+                        margin: 0;
+                        color: #fff;
+                }
+                .card{
+                        margin-top: 120px;
+                        display: flex;
+                        justify-content: end;
+                        .letreiro{
+                                @extend .col-md-7;
+                                background-color: #000;
+                                padding: 30px 40px;
+                                h2, p{
+                                        color: #fff;
+                                }
+                        }
+                }
+        }
+        .principios{
+                @extend .col-md-12;
+                padding: 100px 0;
+                .container{
+                        .box{
+                                @extend .col-md-3;
+                                flex-direction: column;
+                                h3{
+                                        margin: 40px 0 10px 0;
+                                }
+                                p{
+                                        text-align: center;
+                                }
+                        }
+                        .visao{
+                                margin: 0 100px;
+                        }
+                }
+        }
+        .compromissos{
+                @extend .col-md-12;
+                padding: 100px 0;
+                aside{
+                        margin-bottom: 100px;
+                }
+                article{
+                        aside{
+                                margin-left: 60px;
+                                div{
+                                        h3{
+                                                font-size: 32px;
+                                                font-weight: 500; 
+                                        }
+                                }
+                                .m-a{
+                                        margin-top: 40px;
+                                }
+                        }
+                }
+        }
+}
+.produtos{
+        .navegacao{
+                padding: 80px 0;
+                h1{
+                        text-align: center;
+                        font-size: 64px;
+                        font-weight: 600;
+                        margin: 0;
+                        color: $titulo;
+                }
+                .breadcrumb{
+                        ul{
+                                li{
+                                        h1, a{
+                                                color: $titulo;
+                                        }
+                                }
+                        }
+                }
+        }
+        .produto{
+                .container{
+                        .card{
+                                display: flex;
+                                justify-content: space-between;
+                                align-items: center;
+                                flex-flow: wrap;
+                                .box{
+                                        @extend .col-md-5, .col-sm-5, .col-xs-12; 
+                                        width: 46.666667%;
+                                        margin-bottom: 100px;
+                                        flex-direction: column;
+                                        h3{
+                                                font-weight: 500;
+                                                font-size: 32px;
+                                                color: $titulo;
+                                                margin-top: 20px;
+                                        }
+                                        p{
+                                                margin: 0 0 10px 0;
+                                                text-align: center;
+                                        }
+                                }
+                        }
+                }
+        }
+        .servico{
+        
+        }
 }

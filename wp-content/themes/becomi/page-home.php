@@ -40,29 +40,68 @@ get_header();
 				<div class="swiper-button-next swiper-button-white"></div>	
 			</div>			
 		</section>
-		<div class="container">
+		<section class="negocio">
 			<?php
 				$tituloNegocios =  get_post_meta( $post->ID,'titulo-negocio', true );
 				$textoNegocios =  get_post_meta( $post->ID,'texto-negocio', true );
 			?>
-			<section class="negocio">
-				<h2><?php echo $tituloNegocios?></h2>
+			<div class="container">
+				<h2>
+					<?php echo $tituloNegocios?>
+				</h2>
 				<article>
 					<aside>					
-						<?php 
-							$galeria = get_post_meta( $post->ID,'icones-negocio', true );					
-							$galeria = explode(",", $galeria);
-							foreach ( $galeria as $foto ) { ?>					
-								<div class="swiper-slide <?php echo $status?>">											
-									<img src="<?php echo odin_get_image_url( $foto, 70, 50, false, false);?>" alt="<?php echo get_the_title($foto); ?>">
-								</div>
-							<?php }
-						?>	
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icn1.svg"/>
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icn2.svg"/>
+						<img src="<?php echo get_template_directory_uri(); ?>/assets/images/icn3.svg"/>
 					</aside>
 					<p><?php echo $textoNegocios?></p>
 				</article>
-			</section>
-		</div>
+			</div>
+		</section>
+		<section class="produtos">
+			<div class="container">
+				<aside class="titulo-diferenciado alinhamento">
+					<h2>Nossos produtos</h2>
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/linha.svg"/>
+				</aside>
+				<article class="conteudo">
+					<?php 
+						$args = array('post_type' => 'produto','posts_per_page' => 4);
+						$var = new WP_Query($args);    
+						if($var->have_posts()):
+							while($var->have_posts()):
+								$var->the_post();?>  
+									<div class="box alinhamento"> 
+										<?php echo odin_thumbnail(244, 244, true, true);?>
+										<h3><?php the_title()?></h3>
+										<p><?php the_content()?></p>
+										<a class="botao-padrao" href="<?php echo esc_url( home_url( 'produto' ) ); ?>">saiba mais</a>
+									</div>  
+								<?php
+							endwhile;
+						endif;
+					wp_reset_postdata(); ?>
+				</article>
+			</div>
+		</section>
+		<section class="servicos">
+			<?php
+				$tituloServicos =  get_post_meta( $post->ID,'titulo-servico', true );
+				$textoServicos =  get_post_meta( $post->ID,'texto-servico', true );
+				$imgServicos =  get_post_meta( $post->ID,'imagem-srv', true );
+			?>
+			<div class="container alinhamento">
+				<h2><?php echo $tituloServicos?></h2>
+				<aside class="alinhamento">
+					<?php echo odin_thumbnail( 569, 379, get_the_title(), true,true);?>
+					<div class="conteudo">
+						<p><?php echo $textoServicos?></p>
+						<a class="botao-padrao" href="">saiba mais</a>
+					</div>
+				</aside>
+			</div>
+		</section>
 	</main>
 <?php
 get_footer();

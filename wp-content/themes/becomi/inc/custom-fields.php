@@ -222,13 +222,6 @@ function custom_metabox() {
             'description' => __( '', 'odin' ), // Optional
          ),  
          array(
-            'id'          => 'icones-negocio', // Obrigatório
-            'label'       => __( 'Ícones', 'odin' ), // Obrigatório
-            'type'        => 'image_plupload', // Obrigatório
-            'default'     => '', // Opcional (deve ser o id de uma imagem em mídias, separe os ids com virtula)
-            'description' => __( '', 'odin' ), // Opcional
-         ), 
-         array(
             'id'   => 'separator1', // Obrigatório
             'type' => 'separator' // Obrigatório
          ), 
@@ -245,14 +238,7 @@ function custom_metabox() {
             'type'        => 'textarea', // Obrigatório
             'default'     => '', // Opcional (deve ser o id de uma imagem em mídias, separe os ids com virtula)
             'description' => __( '', 'odin' ), // Optional
-         ),    
-         array(
-            'id'          => 'imagem-srv', // Required
-            'label'       => __( 'Imagem Serviço', 'odin' ), // Required
-            'type'        => 'image', // Required
-            // 'default'     => '', // Optional (image attachment id)
-            'description' => __( '', 'odin' ), // Optional
-         ),  
+         ),     
       )
    );
 //Sobre
@@ -274,13 +260,6 @@ function custom_metabox() {
             'description' => __( '', 'odin' ), // Optional
          ), 
          array(
-            'id'          => 'icone-missao', // Required
-            'label'       => __( 'Ícone Missão', 'odin' ), // Required
-            'type'        => 'image', // Required
-            // 'default'     => '', // Optional (image attachment id)
-            'description' => __( '', 'odin' ), // Optional
-         ),  
-         array(
             'id'          => 'visao', // Obrigatório
             'label'       => __( 'Visão', 'odin' ), // Obrigatório
             'type'        => 'textarea', // Obrigatório
@@ -288,24 +267,10 @@ function custom_metabox() {
             'description' => __( '', 'odin' ), // Optional
          ),  
          array(
-            'id'          => 'icone-visao', // Required
-            'label'       => __( 'Ícone Visão', 'odin' ), // Required
-            'type'        => 'image', // Required
-            // 'default'     => '', // Optional (image attachment id)
-            'description' => __( '', 'odin' ), // Optional
-         ),  
-         array(
             'id'          => 'valores', // Obrigatório
             'label'       => __( 'Valores', 'odin' ), // Obrigatório
             'type'        => 'textarea', // Obrigatório
             'default'     => '', // Opcional (deve ser o id de uma imagem em mídias, separe os ids com virtula)
-            'description' => __( '', 'odin' ), // Optional
-         ),  
-         array(
-            'id'          => 'icone-valores', // Required
-            'label'       => __( 'Ícone Valores', 'odin' ), // Required
-            'type'        => 'image', // Required
-            // 'default'     => '', // Optional (image attachment id)
             'description' => __( '', 'odin' ), // Optional
          ),  
          array(
