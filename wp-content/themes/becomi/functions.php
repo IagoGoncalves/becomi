@@ -349,8 +349,8 @@ function cutom_login_logo() {
 		body.login div#login h1 a {
 			background-image: url(". get_template_directory_uri() ."/assets/images/adm.png) !important;
 			background-size: cover !important;
-			height: 180px !important;
-			width: 180px !important;
+			height: 135px !important;
+			width: 320px !important;
 			display: block;
 		}
 	</style>";

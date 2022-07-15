@@ -16,8 +16,8 @@ get_header();
 			<article class="breadcrumb">
 				<div class="container">
 					<ul>
-						<li><a href="<?php echo esc_url( home_url( 'home' ) ); ?>">Home ></a></li>
-						<li class="atual"><h1><?php the_title();?></h1></li>
+						<li><a href="<?php echo esc_url( home_url( 'home' ) ); ?>">Home</a></li>
+						<li class="atual"><h1>> <?php the_title();?></h1></li>
 					</ul>
 				</div>
 			</article>

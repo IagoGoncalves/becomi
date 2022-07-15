@@ -23,8 +23,8 @@ get_header(); ?>
 			<article class="breadcrumb">
 				<div class="container">
 					<ul>
-						<li><a href="<?php echo esc_url( home_url( 'home' ) ); ?>">Home ></a></li>
-						<li class="atual"><h1>Produtos e Serviços</h1></li>
+						<li><a href="<?php echo esc_url( home_url( 'home' ) ); ?>">Home</a></li>
+						<li class="atual"><h1>> Produtos e Serviços</h1></li>
 					</ul>
 				</div>
 			</article>
@@ -54,7 +54,25 @@ get_header(); ?>
 		</section>
 		<section class="servico">
 			<div class="container">
-				
+				<h2>Serviços</h2>
+				<?php
+					$args = array('post_type' => 'servico','posts_per_page' => -1);
+						$var = new WP_Query($args);
+						if($var->have_posts()):
+							while($var->have_posts()):
+								$var->the_post(); ?>
+									<article>
+										<?php echo odin_thumbnail(658, 486, true, true);?>
+										<aside>
+											<h3><?php the_title()?></h3>
+											<p><?php the_content()?></p>
+										</aside>
+									</article>
+								<?php
+							endwhile;
+						endif;
+					wp_reset_postdata(); 
+				?>
 			</div>
 		</section>
 	</main>

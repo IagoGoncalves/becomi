@@ -15,7 +15,7 @@ get_header();
 			<div class="swiper-container banner-home">
 				<div class="swiper-wrapper">
 					<?php
-						$args = array('post_type' => 'banner','posts_per_page' => 3);
+						$args = array('post_type' => 'banner','posts_per_page' => 1);
 							$var = new WP_Query($args);
 							if($var->have_posts()):
 								while($var->have_posts()):
