@@ -15,7 +15,7 @@ get_header();
 			<div class="swiper-container banner-home">
 				<div class="swiper-wrapper">
 					<?php
-						$args = array('post_type' => 'banner','posts_per_page' => 1);
+						$args = array('post_type' => 'banner','posts_per_page' => 3);
 							$var = new WP_Query($args);
 							if($var->have_posts()):
 								while($var->have_posts()):
@@ -76,7 +76,7 @@ get_header();
 										<?php echo odin_thumbnail(244, 244, true, true);?>
 										<h3><?php the_title()?></h3>
 										<p><?php the_content()?></p>
-										<a class="botao-padrao" href="<?php echo esc_url( home_url( 'produto' ) ); ?>">saiba mais</a>
+										<a class="botao-padrao" href="<?php echo esc_url( home_url( 'produto' ) ); ?>">Saiba mais</a>
 									</div>  
 								<?php
 							endwhile;

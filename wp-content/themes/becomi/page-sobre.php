@@ -52,6 +52,16 @@ get_header();
 				</article>
 			</div>
 		</section>
+		<section class="selos">
+			<article class="container alinhamento">
+				<h2>Nossos selos</h2>
+				<div>
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/selo 01.svg"/>
+					<img class="resp" src="<?php echo get_template_directory_uri(); ?>/assets/images/selo 02.svg"/>
+					<img src="<?php echo get_template_directory_uri(); ?>/assets/images/selo 03.svg"/>
+				</div>
+			</article>
+		</section>
 		<section class="compromissos">
 			<?php
 				$tituloSeguranca =  get_post_meta( $post->ID,'titulo-seguranca', true );

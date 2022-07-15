@@ -854,6 +854,42 @@ p{
                         }
                 }
         }
+        .selos{
+                @extend .col-md-12;
+                padding: 50px 0;
+                background-color: $background;
+                .container{
+                        justify-content: space-between;
+                        h2{
+                                color: #6C6C6C;
+                                margin: 0;
+                        }
+                        div{
+                                img{
+                                        max-width: 100%;
+                                }
+                                .resp{
+                                        margin: 0 50px;
+                                }
+                        }
+                        @media only screen and (max-width: 990px){
+                                flex-direction: column;
+                                justify-content: center;
+                                h2{
+                                        margin-bottom: 20px;
+                                }
+                        }
+                        @media only screen and (max-width: 500px){
+                                div{
+                                        display: flex;
+                                        justify-content: center;
+                                       img{
+                                                width: 15%;
+                                       } 
+                                }
+                        }
+                }
+        }
         .compromissos{
                 @extend .col-md-12;
                 padding: 100px 0;
