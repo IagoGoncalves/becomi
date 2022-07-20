@@ -58,13 +58,13 @@
                                         <?php } ?> 
 
                                         <?php if ($endereco != '') { ?> 
-                                           <p class="loc" href="#">
+                                            <a class="loc" href="https://goo.gl/maps/kAJtDumDe2tnPqSx8" target="_blank">
                                                 <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                     <path d="M14 2.3335C9.485 2.3335 5.83333 5.98516 5.83333 10.5002C5.83333 16.6252 14 25.6668 14 25.6668C14 25.6668 22.1667 16.6252 22.1667 10.5002C22.1667 5.98516 18.515 2.3335 14 2.3335ZM8.16666 10.5002C8.16666 7.28016 10.78 4.66683 14 4.66683C17.22 4.66683 19.8333 7.28016 19.8333 10.5002C19.8333 13.8602 16.4733 18.8885 14 22.0268C11.5733 18.9118 8.16666 13.8252 8.16666 10.5002Z" fill="white"/>
                                                     <path d="M14 13.4168C15.6108 13.4168 16.9167 12.111 16.9167 10.5002C16.9167 8.88933 15.6108 7.5835 14 7.5835C12.3892 7.5835 11.0833 8.88933 11.0833 10.5002C11.0833 12.111 12.3892 13.4168 14 13.4168Z" fill="white"/>
                                                 </svg>
                                                 <?php echo $logradouro ?> <?php echo $endereco ?>, <?php echo $numero ?>, <br> <?php echo $bairro ?> - <?php echo $cidade ?>/<?php echo $estado ?> <br> CEP: <?php echo $cep ?> - Cx.Postal: <?php echo $cxp ?>                       
-                                            </p>
+                                            </a>  
                                         <?php } else { ?>
                                             <span class="desabilitado"></span>
                                         <?php } ?>                                     

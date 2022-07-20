@@ -41,8 +41,8 @@ get_header(); ?>
 										<div class="box alinhamento">
 											<?php echo odin_thumbnail(546, 442, true, true);?>
 											<h3><?php the_title()?></h3>
-											<p><?php the_content()?></p>
-											<a class="botao-padrao" href="<?php echo esc_url( home_url( 'produto' ) ); ?>">saiba mais</a>
+											<p><?php echo excerpt(19); ?></p>
+											<a class="botao-padrao" href="<?php the_permalink()?>">Saiba mais</a>
 										</div>
 									<?php
 								endwhile;

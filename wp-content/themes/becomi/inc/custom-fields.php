@@ -318,6 +318,423 @@ function custom_metabox() {
          ),  
       )
    );
+//Produto
+   $post_metabox = new Odin_Metabox(
+      'conteudo-produto', // Slug/ID of the Metabox (Required)
+      'INFORMAÇÕES SOBRE O PRODUTO', // Metabox name (Required)
+      'produto', // Slug of Post Type (Optional)
+      'normal', // Context (options: normal, advanced, or side) (Optional)
+      'high' // Priority (options: high, core, default or low) (Optional)
+   );
+   $post_metabox->set_fields(
+      array(  
+         array(
+            'id'          => 'malhas', // Obrigatório
+            'label'       => __( 'Malhas:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '', 
+         ),
+         array(
+            'id'          => 'fispq', // Obrigatório
+            'label'       => __( 'FISPQ:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '', 
+         ),
+         array(
+            'id'          => 'revisao', // Obrigatório
+            'label'       => __( 'REVISÃO:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '', 
+         ),
+         array(
+            'id'          => 'cod-produto', // Obrigatório
+            'label'       => __( 'Código do Produto:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '', 
+         ),
+         array(
+            'id'          => 'nome-empresa', // Obrigatório
+            'label'       => __( 'Nome da Empresa:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => 'Becomi Comércio de Minérios Ltda.',
+         ),
+         array(
+            'id'          => 'endereco-empresa', // Obrigatório
+            'label'       => __( 'Endereço:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => 'Estrada Remígio Olivotti, 1261 - Bairro do Barreiro – Extrema - MG – CEP: 37.640-000 – Caixa Postal 65.',
+         ),
+         array(
+            'id'          => 'fone-empresa', // Obrigatório
+            'label'       => __( 'Fone/Fax:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '(35) 3435-1562 / 3435-1174',
+         ),
+         array(
+            'id'          => 'email-empresa', // Obrigatório
+            'label'       => __( 'E-mail:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' carina.becomi@gmail.com',
+         ),
+         array(
+            'id'   => 'separator1', // Obrigatório
+            'type' => 'separator' // Obrigatório
+         ),
+         array(
+            'id'   => 'title-2', // Obrigatório
+            'label'=> __( '2. Composição / Informações sobre os ingredientes:', 'odin' ), // Obrigatório
+            'type' => 'title', // Obrigatório
+         ),
+         array(
+            'id'          => 'substancia', // Obrigatório
+            'label'       => __( 'Substância:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'nome-quimico', // Obrigatório
+            'label'       => __( 'Nome Químico:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'nome-comercial', // Obrigatório
+            'label'       => __( 'Nome Comercial:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'natureza-quimica', // Obrigatório
+            'label'       => __( 'Natureza Química:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'   => 'separator1', // Obrigatório
+            'type' => 'separator' // Obrigatório
+         ),
+         array(
+            'id'   => 'title-3', // Obrigatório
+            'label'=> __( '3. Identificação de perigos:', 'odin' ), // Obrigatório
+            'type' => 'title', // Obrigatório
+         ),
+         array(
+            'id'          => 'respiracao', // Obrigatório
+            'label'       => __( 'Respiração:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'olhos', // Obrigatório
+            'label'       => __( 'Olhos:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'   => 'separator1', // Obrigatório
+            'type' => 'separator' // Obrigatório
+         ),
+         array(
+            'id'   => 'title-4', // Obrigatório
+            'label'=> __( '4. Medidas de Primeiros Socorros:', 'odin' ), // Obrigatório
+            'type' => 'title', // Obrigatório
+         ),
+         array(
+            'id'          => 'inalacao', // Obrigatório
+            'label'       => __( 'Inalação:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'contato-olhos', // Obrigatório
+            'label'       => __( 'Contato com os olhos:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'   => 'separator1', // Obrigatório
+            'type' => 'separator' // Obrigatório
+         ),
+         array(
+            'id'   => 'title-5', // Obrigatório
+            'label'=> __( '5. Medidas de combate a incêndios:', 'odin' ), // Obrigatório
+            'type' => 'title', // Obrigatório
+         ),
+         array(
+            'id'          => 'para-produto', // Obrigatório
+            'label'       => __( 'Para o produto:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'para-embalagem', // Obrigatório
+            'label'       => __( 'Para a embalagem:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'   => 'separator1', // Obrigatório
+            'type' => 'separator' // Obrigatório
+         ),
+         array(
+            'id'   => 'title-6', // Obrigatório
+            'label'=> __( '6. Medidas de controle para derramamento / vazamento:', 'odin' ), // Obrigatório
+            'type' => 'title', // Obrigatório
+         ),
+         array(
+            'id'          => 'precaucoes-pessoais', // Obrigatório
+            'label'       => __( 'Precauções pessoais:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'precaucoes-meio-ambiente', // Obrigatório
+            'label'       => __( 'Precauções para o meio ambiente:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'metodos-limpeza', // Obrigatório
+            'label'       => __( 'Métodos de limpeza:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'recuperacao', // Obrigatório
+            'label'       => __( 'Recuperação:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'disposicao-rejeitos', // Obrigatório
+            'label'       => __( 'Disposição para rejeitos:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'   => 'separator1', // Obrigatório
+            'type' => 'separator' // Obrigatório
+         ),
+         array(
+            'id'   => 'title-7', // Obrigatório
+            'label'=> __( '7. Manuseio e Armazenamento:', 'odin' ), // Obrigatório
+            'type' => 'title', // Obrigatório
+         ),
+         array(
+            'id'          => 'medidas-tecnicas-apropriadas', // Obrigatório
+            'label'       => __( 'Medidas técnicas apropriadas:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'orientacoes-manuseio-seguro', // Obrigatório
+            'label'       => __( 'Orientações para manuseio seguro:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'prevencao-exposicao-trabalhador', // Obrigatório
+            'label'       => __( 'Prevenção da exposição do trabalhador:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'medidas-tecnicas-apropriadas-1', // Obrigatório
+            'label'       => __( 'Medidas técnicas apropriadas:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'produtos-incompativeis', // Obrigatório
+            'label'       => __( 'Produtos incompatíveis:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'materiais-embalagem', // Obrigatório
+            'label'       => __( 'Materiais para embalagem:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'   => 'separator1', // Obrigatório
+            'type' => 'separator' // Obrigatório
+         ),
+         array(
+            'id'   => 'title-8', // Obrigatório
+            'label'=> __( '8. Controle de exposição e proteção individual:', 'odin' ), // Obrigatório
+            'type' => 'title', // Obrigatório
+         ),
+         array(
+            'id'          => 'equip-prot-indv', // Obrigatório
+            'label'       => __( 'Equipamento de proteção individual apropriado, quando houver emissão de pó:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'   => 'separator1', // Obrigatório
+            'type' => 'separator' // Obrigatório
+         ),
+         array(
+            'id'   => 'title-9', // Obrigatório
+            'label'=> __( '9. Propriedades físico-químicas:', 'odin' ), // Obrigatório
+            'type' => 'title', // Obrigatório
+         ),
+         array(
+            'id'          => 'estado-fisico', // Obrigatório
+            'label'       => __( 'Estado Físico:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'odor', // Obrigatório
+            'label'       => __( 'Odor:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'cor', // Obrigatório
+            'label'       => __( 'Cor:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'ph', // Obrigatório
+            'label'       => __( 'pH:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'ponto-fusao', // Obrigatório
+            'label'       => __( 'Ponto de Fusão:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'ponto-fulgor', // Obrigatório
+            'label'       => __( 'Ponto de Fulgor:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'solubilidade-agua', // Obrigatório
+            'label'       => __( 'Solubilidade em água:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'limites-explosividade', // Obrigatório
+            'label'       => __( 'Limites de explosividade:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'   => 'separator1', // Obrigatório
+            'type' => 'separator' // Obrigatório
+         ),
+         array(
+            'id'   => 'title-10', // Obrigatório
+            'label'=> __( '10. Estabilidade e Reatividade:', 'odin' ), // Obrigatório
+            'type' => 'title', // Obrigatório
+         ),
+         array(
+            'id'          => 'estabilidade', // Obrigatório
+            'label'       => __( 'Estabilidade:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'reacoes-perigosas', // Obrigatório
+            'label'       => __( 'Reações perigosas:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'produtos-perigosos', // Obrigatório
+            'label'       => __( 'Produtos perigosos de decomposição:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'   => 'separator1', // Obrigatório
+            'type' => 'separator' // Obrigatório
+         ),
+         array(
+            'id'   => 'title-11', // Obrigatório
+            'label'=> __( '11. Informação toxicológica:', 'odin' ), // Obrigatório
+            'type' => 'text', // Obrigatório
+         ),
+         array(
+            'id'   => 'separator1', // Obrigatório
+            'type' => 'separator' // Obrigatório
+         ),
+         array(
+            'id'   => 'title-12', // Obrigatório
+            'label'=> __( '12. Informação ecológica:', 'odin' ), // Obrigatório
+            'type' => 'text', // Obrigatório
+         ),
+         array(
+            'id'   => 'separator1', // Obrigatório
+            'type' => 'separator' // Obrigatório
+         ),
+         array(
+            'id'   => 'title-13', // Obrigatório
+            'label'=> __( '13. Considerações sobre tratamento e disposição:', 'odin' ), // Obrigatório
+            'type' => 'title', // Obrigatório
+         ),
+         array(
+            'id'          => 'residuo-produto', // Obrigatório
+            'label'       => __( 'Resíduo do produto:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'          => 'embalagem-usada', // Obrigatório
+            'label'       => __( 'Embalagem usada:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'   => 'separator1', // Obrigatório
+            'type' => 'separator' // Obrigatório
+         ),
+         array(
+            'id'   => 'title-14', // Obrigatório
+            'label'=> __( '14. Informações sobre transportes:', 'odin' ), // Obrigatório
+            'type' => 'title', // Obrigatório
+         ),
+         array(
+            'id'          => 'regulamentacoes-nac-int', // Obrigatório
+            'label'       => __( 'Regulamentações nacionais e internacionais:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'   => 'separator1', // Obrigatório
+            'type' => 'separator' // Obrigatório
+         ),
+         array(
+            'id'   => 'title-15', // Obrigatório
+            'label'=> __( '15. Regulamentações:', 'odin' ), // Obrigatório
+            'type' => 'title', // Obrigatório
+         ),
+         array(
+            'id'          => 'info-risco-seguranca', // Obrigatório
+            'label'       => __( 'Informações sobre riscos e segurança no rótulo:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => ' ',
+         ),
+         array(
+            'id'   => 'separator1', // Obrigatório
+            'type' => 'separator' // Obrigatório
+         ),
+         array(
+            'id'   => 'title-16', // Obrigatório
+            'label'=> __( '16. Outras informações:', 'odin' ), // Obrigatório
+            'type' => 'text', // Obrigatório
+         ),
+      )
+   );
 }
 add_action( 'init', 'custom_metabox', 1 );
 
