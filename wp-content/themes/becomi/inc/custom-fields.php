@@ -389,25 +389,43 @@ function custom_metabox() {
             'id'          => 'substancia', // Obrigatório
             'label'       => __( 'Substância:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'nome-quimico', // Obrigatório
             'label'       => __( 'Nome Químico:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'nome-comercial', // Obrigatório
             'label'       => __( 'Nome Comercial:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'outros-tipos', // Obrigatório
+            'label'       => __( 'Outros Tipos:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
          ),
          array(
             'id'          => 'natureza-quimica', // Obrigatório
             'label'       => __( 'Natureza Química:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'grau-risco', // Obrigatório
+            'label'       => __( 'Grau de Risco:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'num-cas', // Obrigatório
+            'label'       => __( 'Nº de Registro CAS:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
          ),
          array(
             'id'   => 'separator1', // Obrigatório
@@ -422,13 +440,49 @@ function custom_metabox() {
             'id'          => 'respiracao', // Obrigatório
             'label'       => __( 'Respiração:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'efeitos-agudos', // Obrigatório
+            'label'       => __( 'Efeitos Agudos:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'efeitos-cronicos', // Obrigatório
+            'label'       => __( 'Efeitos Crônicos:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'toxidade', // Obrigatório
+            'label'       => __( 'Toxidade:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
          ),
          array(
             'id'          => 'olhos', // Obrigatório
             'label'       => __( 'Olhos:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'injestao', // Obrigatório
+            'label'       => __( 'Ingestão:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'contato-pele', // Obrigatório
+            'label'       => __( 'Contato com a Pele:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'cond-agra-expo', // Obrigatório
+            'label'       => __( 'Condições Médicas Agravadas pela Exposição:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
          ),
          array(
             'id'   => 'separator1', // Obrigatório
@@ -443,13 +497,19 @@ function custom_metabox() {
             'id'          => 'inalacao', // Obrigatório
             'label'       => __( 'Inalação:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'contato-olhos', // Obrigatório
             'label'       => __( 'Contato com os olhos:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'contato-pele1', // Obrigatório
+            'label'       => __( 'Contato com a Pele:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
          ),
          array(
             'id'   => 'separator1', // Obrigatório
@@ -464,13 +524,13 @@ function custom_metabox() {
             'id'          => 'para-produto', // Obrigatório
             'label'       => __( 'Para o produto:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'para-embalagem', // Obrigatório
             'label'       => __( 'Para a embalagem:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'   => 'separator1', // Obrigatório
@@ -482,34 +542,40 @@ function custom_metabox() {
             'type' => 'title', // Obrigatório
          ),
          array(
+            'id'          => 'paragrafo6', // Obrigatório
+            'label'       => __( 'Paragrafo:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
+         ),
+         array(
             'id'          => 'precaucoes-pessoais', // Obrigatório
             'label'       => __( 'Precauções pessoais:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'precaucoes-meio-ambiente', // Obrigatório
             'label'       => __( 'Precauções para o meio ambiente:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'metodos-limpeza', // Obrigatório
             'label'       => __( 'Métodos de limpeza:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'recuperacao', // Obrigatório
             'label'       => __( 'Recuperação:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'disposicao-rejeitos', // Obrigatório
             'label'       => __( 'Disposição para rejeitos:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'   => 'separator1', // Obrigatório
@@ -521,40 +587,52 @@ function custom_metabox() {
             'type' => 'title', // Obrigatório
          ),
          array(
+            'id'          => 'paragrafo7', // Obrigatório
+            'label'       => __( 'Paragrafo:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
+         ),
+         array(
             'id'          => 'medidas-tecnicas-apropriadas', // Obrigatório
             'label'       => __( 'Medidas técnicas apropriadas:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'orientacoes-manuseio-seguro', // Obrigatório
             'label'       => __( 'Orientações para manuseio seguro:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'prevencao-exposicao-trabalhador', // Obrigatório
             'label'       => __( 'Prevenção da exposição do trabalhador:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'medidas-tecnicas-apropriadas-1', // Obrigatório
             'label'       => __( 'Medidas técnicas apropriadas:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'produtos-incompativeis', // Obrigatório
             'label'       => __( 'Produtos incompatíveis:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'materiais-embalagem', // Obrigatório
             'label'       => __( 'Materiais para embalagem:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'outras-precaucoes', // Obrigatório
+            'label'       => __( 'Outras precauções:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
          ),
          array(
             'id'   => 'separator1', // Obrigatório
@@ -569,7 +647,43 @@ function custom_metabox() {
             'id'          => 'equip-prot-indv', // Obrigatório
             'label'       => __( 'Equipamento de proteção individual apropriado, quando houver emissão de pó:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'medidas-controle-engenharia', // Obrigatório
+            'label'       => __( 'Medidas de Controle de Engenharia:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'monitoramento', // Obrigatório
+            'label'       => __( 'Monitoramento:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'prot-olhos', // Obrigatório
+            'label'       => __( 'Proteção para os olhos:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'prot-resp', // Obrigatório
+            'label'       => __( 'Proteção respiratória:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'vent', // Obrigatório
+            'label'       => __( 'Ventilação:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'outros-equip-prot', // Obrigatório
+            'label'       => __( 'Outros Equipamentos de Proteção:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
          ),
          array(
             'id'   => 'separator1', // Obrigatório
@@ -584,49 +698,61 @@ function custom_metabox() {
             'id'          => 'estado-fisico', // Obrigatório
             'label'       => __( 'Estado Físico:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'peso-espec', // Obrigatório
+            'label'       => __( 'Peso Específico:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
          ),
          array(
             'id'          => 'odor', // Obrigatório
             'label'       => __( 'Odor:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'cor', // Obrigatório
             'label'       => __( 'Cor:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'ph', // Obrigatório
             'label'       => __( 'pH:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'ponto-fusao', // Obrigatório
             'label'       => __( 'Ponto de Fusão:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'lmt-tol-exp', // Obrigatório
+            'label'       => __( 'Limite de Tolerância de Exposição:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
          ),
          array(
             'id'          => 'ponto-fulgor', // Obrigatório
             'label'       => __( 'Ponto de Fulgor:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'solubilidade-agua', // Obrigatório
             'label'       => __( 'Solubilidade em água:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'limites-explosividade', // Obrigatório
             'label'       => __( 'Limites de explosividade:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'   => 'separator1', // Obrigatório
@@ -638,22 +764,28 @@ function custom_metabox() {
             'type' => 'title', // Obrigatório
          ),
          array(
+            'id'          => 'reatividade', // Obrigatório
+            'label'       => __( 'Reatividade:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
+         ),
+         array(
             'id'          => 'estabilidade', // Obrigatório
             'label'       => __( 'Estabilidade:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'reacoes-perigosas', // Obrigatório
             'label'       => __( 'Reações perigosas:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'produtos-perigosos', // Obrigatório
             'label'       => __( 'Produtos perigosos de decomposição:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'   => 'separator1', // Obrigatório
@@ -662,6 +794,22 @@ function custom_metabox() {
          array(
             'id'   => 'title-11', // Obrigatório
             'label'=> __( '11. Informação toxicológica:', 'odin' ), // Obrigatório
+            'type' => 'text', // Obrigatório
+         ),
+         array(
+            'id'          => 'paragrafo11', // Obrigatório
+            'label'       => __( 'Paragrafo:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
+         ),
+         array(
+            'id'   => 'tipo-exp', // Obrigatório
+            'label'=> __( 'Tipo de exposição:', 'odin' ), // Obrigatório
+            'type' => 'text', // Obrigatório
+         ),
+         array(
+            'id'   => 'tipo-resp-orgn', // Obrigatório
+            'label'=> __( 'Tipo de resposta orgânica:', 'odin' ), // Obrigatório
             'type' => 'text', // Obrigatório
          ),
          array(
@@ -686,13 +834,13 @@ function custom_metabox() {
             'id'          => 'residuo-produto', // Obrigatório
             'label'       => __( 'Resíduo do produto:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'          => 'embalagem-usada', // Obrigatório
             'label'       => __( 'Embalagem usada:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'   => 'separator1', // Obrigatório
@@ -707,7 +855,7 @@ function custom_metabox() {
             'id'          => 'regulamentacoes-nac-int', // Obrigatório
             'label'       => __( 'Regulamentações nacionais e internacionais:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'   => 'separator1', // Obrigatório
@@ -722,7 +870,7 @@ function custom_metabox() {
             'id'          => 'info-risco-seguranca', // Obrigatório
             'label'       => __( 'Informações sobre riscos e segurança no rótulo:', 'odin' ), // Obrigatório
             'type'        => 'text', // Obrigatório
-            'default'     => ' ',
+            'default'     => '',
          ),
          array(
             'id'   => 'separator1', // Obrigatório
@@ -732,6 +880,18 @@ function custom_metabox() {
             'id'   => 'title-16', // Obrigatório
             'label'=> __( '16. Outras informações:', 'odin' ), // Obrigatório
             'type' => 'text', // Obrigatório
+         ),
+         array(
+            'id'          => 'prazo-validade', // Obrigatório
+            'label'       => __( 'Prazo de validade:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
+         ),
+         array(
+            'id'          => 'bibliografia', // Obrigatório
+            'label'       => __( 'Bibliografia:', 'odin' ), // Obrigatório
+            'type'        => 'text', // Obrigatório
+            'default'     => '',
          ),
       )
    );
