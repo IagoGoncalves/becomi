@@ -666,7 +666,7 @@ p{
                         .conteudo{
                                 display: flex;
                                 justify-content: space-between;
-                                align-items: flex-start;
+                                align-items: baseline;
                                 flex-flow: wrap;
                                 .box{
                                         @extend .col-md-3;
@@ -1184,7 +1184,7 @@ p{
                         justify-content: space-between;
                         align-items: baseline;
                         flex-flow: wrap;
-                        .formulario{
+                        .contact2-form{
                                 @extend .col-md-7, .col-sm-12, .col-xs-12;
                                 margin-bottom: 120px;
                                 h2{
@@ -1361,6 +1361,11 @@ p{
                                                 margin-right: 0px;
                                         }
                                 }
+                                .campo4{
+                                        @extend .col-md-12, .col-sm-12, .col-xs-12;
+                                        padding: 0;
+                                        margin-bottom: 28px;
+                                }
                                 .botao-enviar{
                                         @extend .col-md-12, .col-sm-12, .col-xs-12;
                                         padding: 0;
@@ -1402,3 +1407,6 @@ p{
                 }
         }
 }
+.load{
+        display: none;
+}     

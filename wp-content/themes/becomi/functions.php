@@ -253,7 +253,7 @@ function odin_enqueue_scripts() {
 		
 	wp_enqueue_script( 'swiper', $template_url . '/assets/js/swiper.jquery.min.js', array('jquery'), null, true );
 
-	wp_localize_script( 'galeria', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
+	//wp_localize_script( 'galeria', 'MyAjax', array( 'ajaxurl' => admin_url( 'admin-ajax.php' ) ) );
 
 	// Grunt watch livereload in the browser.
 	// wp_enqueue_script( 'odin-livereload', 'http://localhost:35729/livereload.js?snipver=1', array(), null, true );
@@ -335,9 +335,9 @@ require_once get_template_directory() . '/inc/custom-posts.php';
 //Metabox
 require_once get_template_directory() . '/inc/custom-fields.php';
 
-//Ajax
-/*require_once('class.phpmailer.php');
-require_once get_template_directory() . '/inc/ajax.php';*/
+//Ajax enviar formulario
+require_once('class.phpmailer.php');
+require_once get_template_directory() . '/inc/ajax.php';
 
 //MetaBox
 $post_id = $_GET['post'] ? $_GET['post'] : $_POST['post_ID'] ;

@@ -97,7 +97,7 @@ get_header();
 					<?php echo odin_thumbnail( 569, 379, get_the_title(), true,true);?>
 					<div class="conteudo">
 						<p><?php echo $textoServicos?></p>
-						<a class="botao-padrao" href="">saiba mais</a>
+						<a class="botao-padrao" href="<?php echo esc_url( home_url( 'quem-somos' ) ); ?>">saiba mais</a>
 					</div>
 				</aside>
 			</div>
